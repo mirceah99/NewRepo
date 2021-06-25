@@ -7,7 +7,7 @@ import { DatabaseService } from '../database.service';
   styleUrls: ['./user-info.component.css'],
 })
 export class UserInfoComponent implements OnInit {
-  constructor(private service: DatabaseService) {}
+  constructor(private service: DatabaseService) {} // instance DatabaseService in constructor
 
   user: any = {};
   name: string = 'teo';
@@ -18,11 +18,10 @@ export class UserInfoComponent implements OnInit {
   }
 
   requestUserData() {
+    // .subscribe() it is waiting for answer
     this.service.getUserInfo().subscribe((data) => {
       this.user = data;
-      //this.user = data.userName;
-      const obj = JSON.parse(JSON.stringify(data));
-      this.name = obj.userName;
+      this.user = data.userName;
       console.log('good');
     });
   }

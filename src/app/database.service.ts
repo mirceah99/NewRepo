@@ -8,7 +8,7 @@ import { observable, Observable } from 'rxjs';
 export class DatabaseService {
   readonly apiUrl = 'http://localhost:3001/';
   constructor(private http: HttpClient) {}
-  getUserInfo(): Observable<any[]> {
+  getUserInfo(): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'users/9');
   }
 }

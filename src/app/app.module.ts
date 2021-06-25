@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     NavBarComponent,
     ProfileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [DatabaseService],
   bootstrap: [AppComponent],
 })
